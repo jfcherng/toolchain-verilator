@@ -1,6 +1,6 @@
 # -- Compile Verilator script
 
-VER=3.922
+VER=4.014
 VERILATOR=verilator-$VER
 TAR_VERILATOR=verilator-$VER.tgz
 REL_VERILATOR=https://www.veripool.org/ftp/$TAR_VERILATOR
@@ -35,7 +35,7 @@ fi
 # -- Compile it
 cd src
 echo CFLAGS="$MAKE_CFLAGS" CXXFLAGS="$MAKE_CXXFLAGS" LDFLAGS="$MAKE_LDFLAGS"
-make opt -j$J CFLAGS="$MAKE_CFLAGS" CXXFLAGS="$MAKE_CXXFLAGS" LDFLAGS="$MAKE_LDFLAGS"
+make -j$J CFLAGS="$MAKE_CFLAGS" CXXFLAGS="$MAKE_CXXFLAGS" LDFLAGS="$MAKE_LDFLAGS"
 
 # -- Test the generated executables
 if [ $ARCH != "darwin" ]; then
