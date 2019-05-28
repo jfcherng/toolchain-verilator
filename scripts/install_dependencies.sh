@@ -31,6 +31,16 @@ if [ ${ARCH:0:7} == "windows" ]; then
   sudo apt-get autoremove -y
 fi
 
+if [ $ARCH == "windows_x86" ]; then
+  sudo apt install gcc-mingw-w64-i686 g++-mingw-w64-i686
+  sudo apt-get autoremove -y
+fi
+
+if [ $ARCH == "windows_amd64" ]; then
+  sudo apt install gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64
+  sudo apt-get autoremove -y
+fi
+
 if [ $ARCH == "darwin" ]; then
   DEPS="bison flex autoconf"
   brew update
